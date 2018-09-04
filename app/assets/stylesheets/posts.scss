@@ -1,7 +1,161 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-section {
-    background-image: url("../images/cloud.jpg");
-    height: 90vh;
+
+body {
+    color: #fff;
 }
+header {
+    height: 5.5vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+.headwrapper {
+    display: flex;
+    align-items: center;
+}
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar-dark .navbar-brand {
+    color: #231f20;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #231f20;
+}
+
+#navbardrop {
+    color: #231f20;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    padding: 0px 1rem;
+    margin: 0 0.5rem;
+    border: 0.1rem solid #231f20;
+    border-radius: 0.5rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-success{
+    background-image: linear-gradient(to bottom, #231f20 0%, #231f20 100%);
+    border-color: #28528c;
+}
+
+.bg-dark {
+    background-color: #5faac7 !important;
+}
+
+section {
+    background-image: url("../images/bg.png");
+    background-position: center;
+    height:90vh;
+    overflow: scroll;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+section .container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container-fluid > h2:nth-child(1) {
+    color: rgb(255, 255, 255);
+    height: 10%;
+}
+
+.container {
+width: 42rem;
+height: 40rem;
+display: flex;
+flex-direction: column;
+background: #231f2099;
+margin: 2rem 2rem;
+border-radius: 0.5rem;
+border: 0.3rem solid #fffdfe;
+outline: 0.3rem solid #5faac7;
+-moz-outline-radius: 0.7rem;
+}
+
+.form-wrapper {
+    width: 45rem;
+    height:45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2ab7d533;
+    margin: 2rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.blog-header {
+    height: 20%;
+	align-items: center;
+	display: flex;
+}
+
+.blog-content {
+    height: 70%;
+}
+
+.blog-content p {
+    text-align: center;
+}
+
+.blog-footer {
+    height: 10%;
+    display: flex;
+    width: 100%;
+}
+
+.like-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.comment-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+footer {
+    height: 4.5vh;
+    background-color: #5faac7 !important;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: #231f20;
+}
+
+

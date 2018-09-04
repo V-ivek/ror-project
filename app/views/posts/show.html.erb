@@ -1,14 +1,39 @@
-<p>
-  <strong>Owner:</strong>
-  <%= @post.owner %>
-</p>
- 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
- 
+<%= stylesheet_link_tag "posts" %>
 
- 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <body>
+    <header>
+      <%= render "header" %>
+    </header>
+    <section>
+      <div class="container-fluid">
+        <h2><%= @post.title %>.!</h2>
+      </div>
+      <div class="new">
+      <div class="container justify-items-center align-items-center">
+        <div class="blog-header">
+          <%= @post.title %>
+        </div>
+        <div class="blog-content">
+          <%= @post.content %>
+          Change layout to include comments and creater at the bottom
+        </div>
+        <div class="blog-footer">
+              <div class="like-wrapper"><a href="#">Like
+                  <span class="glyphicon glyphicon-thumbs-up"></span>
+                </a>
+              </div>
+              <div class="comment-wrapper">
+                <a href="#">Comment
+                  <span class="glyphicon glyphicon-comment"></span>
+                </a>
+              </div>
+            </div>
+      </div>
+      </div>
+      <%= link_to 'Back', posts_path %>
+        </div>
+    </section>
+    <footer>
+      <%= render "footer" %>
+    </footer>
+  </body>

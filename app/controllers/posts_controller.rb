@@ -5,6 +5,9 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all
     end
+    def edit
+        @post = Post.find(params[:id])
+    end
     def show 
         @post = Post.find(params[:id])
     end
@@ -12,6 +15,7 @@ class PostsController < ApplicationController
         # render plain: params[:post].inspect
         # binding.pry
         @post = Post.new(post_params)
+        #insert user_id of logged in user once devise is setup 
         @post.user_id = 1
         @post.save  
         if true
@@ -37,6 +41,6 @@ class PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:owner,:content)
+        params.require(:post).permit(:owner,:title,:content)
     end
 end
