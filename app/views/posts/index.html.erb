@@ -15,12 +15,16 @@
               <%= post.owner %>
             </div>
             <div class="blog-content">
-              <p><%= link_to post.title , post_path(post) %></p>
-              <p><%= post.content %></p>         
-              <td><%= link_to 'Destroy', post_path(post),
+              <p>
+                <%= link_to post.title , post_path(post) %>
+              </p>
+              <p>
+                <%= post.content %>
+              </p>
+              <span><%= link_to 'Destroy', post_path(post),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-              <td><%= link_to 'Edit', edit_post_path(post.id)  %></td> 
+              data: { confirm: 'Are you sure?' } %></span>
+              <span><%= button_to 'Edit', edit_post_path(post.id) , {method: :get } %></span>
             </div>
             <div class="blog-footer">
               <div class="like-wrapper"><a href="#">Like
@@ -33,27 +37,6 @@
                 </a>
               </div>
             </div>
-            <!--
-<table>
-  <tr>
-    <th>Owner</th>
-    <th>Content</th>
-    <th></th>
-  </tr>
-    <tr>
-      <td><%= post.owner %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-</table> 
-<%= link_to 'New post', new_post_path %>
-<%= link_to 'Back', controller: 'welcome' %>
-</div>
--->
           </div>
           <% end %>
       </div>

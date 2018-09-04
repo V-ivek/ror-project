@@ -1,5 +1,23 @@
-<h1>Welcome to Blog</h1>
-<span><%=link_to 'Posts', controller: 'posts' %></span>
+<!-- 
 <span>Login</span>
 <span><%=link_to 'Sign up', controller: 'users' %></span>
+-->
 
+<%= stylesheet_link_tag "posts" %>
+
+  <body>
+    <header>
+      <%= render "posts/header" %>
+    </header>
+    <section>
+      <div class="container-fluid">
+        <h2>Welcome to Blog</h2>
+      </div>
+      <div class="blogs">
+      </div>
+
+    </section>
+    <footer>
+      <%= render "posts/footer" %>
+    </footer>
+  </body>

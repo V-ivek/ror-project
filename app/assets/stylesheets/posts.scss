@@ -2,9 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-    color: #fff;
-}
+
 header {
     height: 5.5vh;
     font-family: 'Courier New', Courier, monospace;
@@ -12,7 +10,7 @@ header {
 .headwrapper {
     display: flex;
     align-items: center;
-}
+}   
 .navbar {
     margin-bottom: 0px;
     border-radius: 0px;
@@ -89,11 +87,11 @@ width: 42rem;
 height: 40rem;
 display: flex;
 flex-direction: column;
-background: #231f2099;
+background: #000c;
 margin: 2rem 2rem;
 border-radius: 0.5rem;
 border: 0.3rem solid #fffdfe;
-outline: 0.3rem solid #5faac7;
+outline: 0.3rem solid #0b8cbf;
 -moz-outline-radius: 0.7rem;
 }
 
@@ -104,30 +102,51 @@ outline: 0.3rem solid #5faac7;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #2ab7d533;
+    background: #000c;
+    border: 0.3rem solid #fffdfe;
+    outline: 0.3rem solid #0b8cbf;
+    -moz-outline-radius: 0.7rem;
     margin: 2rem 2rem;
     border-radius: 0.5rem;
+}
+
+.form-wrapper label {
+    color: white;
 }
 
 .new{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
     height: 90%;
 }
 
 .blog-header {
     height: 20%;
 	align-items: center;
-	display: flex;
+    display: flex;
+    color: white;
 }
 
 .blog-content {
     height: 70%;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content span {
+    text-align: center;
+}
+
+.blog-content p a {
+    color: #27dafa;
 }
 
 .blog-content p {
     text-align: center;
+    color: white;
 }
 
 .blog-footer {
