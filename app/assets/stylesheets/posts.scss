@@ -52,12 +52,15 @@ header {
 
 .bg-dark {
     background-color: #5faac7 !important;
+    border-bottom: 0.3rem solid #fffdfe;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 section {
     background-image: url("bg.png");
     background-position: center;
-    height:90vh;
+    height:89vh;
     overflow: scroll;
     font-family: 'Courier New', Courier, monospace;
 
@@ -83,16 +86,16 @@ section .container-fluid {
 }
 
 .container {
-width: 42rem;
-height: 40rem;
-display: flex;
-flex-direction: column;
-background: #000c;
-margin: 2rem 2rem;
-border-radius: 0.5rem;
-border: 0.3rem solid #fffdfe;
-outline: 0.3rem solid #0b8cbf;
--moz-outline-radius: 0.7rem;
+    width: 42rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem;
+    border-radius: 0.5rem;
+    border: 0.25rem solid #fffdfe;
+    outline: 0.3rem solid #0b8cbf;
+    -moz-outline-radius: 0.7rem;
+    padding: 0px 0px !important;
 }
 
 .form-wrapper {
@@ -118,21 +121,26 @@ outline: 0.3rem solid #0b8cbf;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     height: 90%;
 }
 
 .blog-header {
-    height: 20%;
-	align-items: center;
+    height: 15%;
+    color: #000;
+    align-items: center;
+    background-color: #5faac7;
+    border-bottom: 0.2rem solid #fffdfe;
+    justify-content: center;
+    width: 100%;
     display: flex;
-    color: white;
 }
 
 .blog-content {
-    height: 70%;
+    height: 75%;
     justify-items: center;
+    width: 100%;
     display: flex;
+    background: #000c;
     flex-direction: column;
 }
 
@@ -147,24 +155,39 @@ outline: 0.3rem solid #0b8cbf;
 .blog-content p {
     text-align: center;
     color: white;
+    margin: 1rem 1rem;
 }
 
 .blog-footer {
-    height: 10%;
-    display: flex;
     width: 100%;
+    height: 10%;
+    background-color: #5faac7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.2rem solid #fffdfe;
+}
+
+.blog-footer a {
+   color: #231f20;
 }
 
 .like-wrapper {
     display: flex;
     justify-content: center;
     width: 50%;
+    border-right: 0.2rem solid #fffdfe;
+    height: 100%;
+    align-items: center;
 }
 
 .comment-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
+    border-left: 0.1rem solid #fffdfe;
+    height: 100%;
 }
 
 footer {
@@ -175,6 +198,9 @@ footer {
     justify-content: center;
     align-items:center;
     color: #231f20;
+    border-top: 0.3rem solid #fffdfe;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 
