@@ -45,6 +45,15 @@ header {
     align-items: center;
 }
 
+.dropdown-menu > a:nth-child(2){
+    padding: 0px 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
 .btn-success{
     background-image: linear-gradient(to bottom, #231f20 0%, #231f20 100%);
     border-color: #28528c;
@@ -60,7 +69,7 @@ header {
 section {
     background-image: url("bg.png");
     background-position: center;
-    height:89vh;
+    height:90vh;
     overflow: scroll;
     font-family: 'Courier New', Courier, monospace;
 

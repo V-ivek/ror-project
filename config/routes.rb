@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'welcome#index'
-    resources :users, only: [:index, :create, :show , :new] 
       resources :posts do
         resources :comments
      end
