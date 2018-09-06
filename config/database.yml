@@ -14,7 +14,7 @@ development:
  database: blog
  pool: 25
  timeout: 60000
- username: vivek
+ username: postgres
  password: password
  host: localhost
 

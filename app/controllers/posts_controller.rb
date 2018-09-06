@@ -3,7 +3,7 @@ class PostsController < ApplicationController
         @post = Post.new
     end
     def index
-        @posts = Post.all
+        @posts = Post.order(likes_count: :desc)
     end
     def edit
         @post = Post.find(params[:id])
