@@ -10,7 +10,7 @@
         <% @posts.each do |post,index| %>
           <div class="container justify-items-center align-items-center">
             <div class="blog-header">
-              <%= post.owner %>
+              <%= post.user.email %>
             </div>
             <div class="blog-content">
               <p>
@@ -25,12 +25,11 @@
               <span><%= button_to 'Edit', edit_post_path(post.id) , {method: :get } %></span>
             </div>
             <div class="blog-footer">
-              <div class="like-wrapper"><a href="#">Like
-                  <span class="glyphicon glyphicon-thumbs-up"></span>
-                </a>
+              <div class="like-wrapper">
+                <%= link_to "Likes (#{post.likes_count})", add_like_path(post.id) %><span class="glyphicon glyphicon-thumbs-up"></span>
               </div>
               <div class="comment-wrapper">
-                <a href="#">Comment
+                <a href="#">Comments(<%= post.likes_count %>)
                   <span class="glyphicon glyphicon-comment"></span>
                 </a>
               </div>

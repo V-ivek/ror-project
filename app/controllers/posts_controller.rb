@@ -16,7 +16,9 @@ class PostsController < ApplicationController
         # binding.pry
         @post = Post.new(post_params)
         #insert user_id of logged in user once devise is setup 
-        @post.user_id = 1
+        @post.user_id = current_user.id
+        @post.likes_count = 0
+        @post.comments_count = 0
         @post.save  
         if true
             redirect_to @post
@@ -38,9 +40,12 @@ class PostsController < ApplicationController
         @post.destroy
         redirect_to posts_path
     end
-
+    def like
+        @post = Post.find(params[:id])
+        @user = current_users
+    end
     private
     def post_params
-        params.require(:post).permit(:owner,:title,:content)
+        params.require(:post).permit(:id,:owner,:title,:content,:likes_count,:comments_count)
     end
 end

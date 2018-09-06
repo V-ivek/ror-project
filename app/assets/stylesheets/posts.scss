@@ -45,6 +45,32 @@ header {
     align-items: center;
 }
 
+.nav-item a {
+    padding: 0px 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    width: inherit;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-item a:hover {
+    background-color: #231f20;
+    color: #5faac7 !important;
+}
+
+
+
+
+
+
+.nav-item:hover {
+    background-color: #231f20;
+}
+
+
 .dropdown-menu > a:nth-child(2){
     padding: 0px 1rem;
     margin: 0 0.5rem;
@@ -55,9 +81,21 @@ header {
 }
 
 .btn-success{
+    background-image: linear-gradient(to bottom, #5faac7 0%, #5faac7 100%);
+    border-color: #28528c;
+    color: #231f20cc;
+}
+
+.btn-success:hover {
+    background-color: #231f20 !important;
+    color: #5faac7 !important;
+    background-position: 0 0;
+    color: #5faac7 !important;
     background-image: linear-gradient(to bottom, #231f20 0%, #231f20 100%);
     border-color: #28528c;
 }
+
+
 
 .bg-dark {
     background-color: #5faac7 !important;
@@ -108,8 +146,8 @@ section .container-fluid {
 }
 
 .form-wrapper {
-    width: 45rem;
-    height:45rem;
+    width: 50rem;
+    height: 50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,13 +155,41 @@ section .container-fluid {
     background: #000c;
     border: 0.3rem solid #fffdfe;
     outline: 0.3rem solid #0b8cbf;
-    -moz-outline-radius: 0.7rem;
+    -moz-outline-radius: 14.7rem;
     margin: 2rem 2rem;
-    border-radius: 0.5rem;
+    border-radius: 27.5rem;
 }
 
 .form-wrapper label {
     color: white;
+}
+
+.field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field i {
+    color: whitesmoke;
+}
+
+.actions i {
+    color: whitesmoke;
+}
+
+.btn-success:focus {
+    box-shadow: 0 0 0 .2rem rgb(11, 140, 191);
+    background-color: #419641;
+    background-position: 0 0;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .new{
@@ -132,6 +198,11 @@ section .container-fluid {
     align-items: center;
     height: 90%;
 }
+.new .blog-content {
+    color: white;
+}
+
+
 
 .blog-header {
     height: 15%;
