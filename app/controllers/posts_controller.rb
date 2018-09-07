@@ -4,6 +4,9 @@ class PostsController < ApplicationController
     end
     def index
         @posts = Post.order(likes_count: :desc)
+        if user_signed_in?
+            u = User.find_by_id(current_user.id)
+        end
     end
     def edit
         @post = Post.find(params[:id])
@@ -43,6 +46,11 @@ class PostsController < ApplicationController
     def like
         @post = Post.find(params[:id])
         @user = current_users
+    end
+    def liked
+        liked_user = User.new 
+        liked_user = u.likes.each do |x| x if x[:post_id] == post[:id] end
+        return liked_user.any?
     end
     private
     def post_params

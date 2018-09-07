@@ -7,7 +7,7 @@
         <h2>Top blogs</h2>
       </div>
       <div class="blogs">
-        <% @posts.each do |post,index| %>
+        <% @posts.each do |post| %>
           <div class="container justify-items-center align-items-center">
             <div class="blog-header">
               <%= post.user.email %>
@@ -24,16 +24,29 @@
               data: { confirm: 'Are you sure?' } %></span>
               <span><%= button_to 'Edit', edit_post_path(post.id) , {method: :get } %></span>
             </div>
+            <% if user_signed_in? %>
+              <div class="blog-footer">
+                <div class="like-wrapper">
+                <%if !current_user.likes.find_by_post_id(post[:id]) %>
+                  <%= link_to "Likes (#{post.likes_count})", add_like_path(post.id) %><span class="glyphicon glyphicon-thumbs-up"></span>
+                <% else %>
+                    <%= link_to_if !current_user.likes.find_by_post_id(post[:id]) , "Liked! (#{post.likes_count})", add_like_path(post.id) %>
+                <% end %>
+                </div>
+                <div class="comment-wrapper">
+                  <%= link_to "Comments (#{post.comments_count})", post_path(post[:id]) %><span class="glyphicon glyphicon-comment"></span>
+                </div>
+              </div>
+            <% else %>
             <div class="blog-footer">
-              <div class="like-wrapper">
-                <%= link_to "Likes (#{post.likes_count})", add_like_path(post.id) %><span class="glyphicon glyphicon-thumbs-up"></span>
+                <div class="like-wrapper">
+                  <%= link_to_if false, "Likes (#{post.likes_count})", add_like_path(post.id) %>
+                </div>
+                <div class="comment-wrapper">
+                  <%= link_to_if false, "Comments (#{post.comments_count})", post_path(post[:id]) %>
+                </div>
               </div>
-              <div class="comment-wrapper">
-                <a href="#">Comments(<%= post.comments_count %>)
-                  <span class="glyphicon glyphicon-comment"></span>
-                </a>
-              </div>
-            </div>
+            <% end %>
           </div>
           <% end %>
       </div>

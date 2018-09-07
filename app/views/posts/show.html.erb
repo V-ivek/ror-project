@@ -3,29 +3,70 @@
   <body>
     <section>
       <div class="container-fluid">
-        <h2>Post by <%= @post.user.email %>.!</h2>
+        <h2>Post by
+          <%= @post.user.email %>.!
+        </h2>
       </div>
       <div class="new">
-      <div class="container justify-items-center align-items-center">
-        <div class="blog-header">
-          <%= @post.title %>
-        </div>
-        <div class="blog-content">
-          <%= @post.content %>
-          Change layout to include comments and creater at the bottom
-        </div>
-        <div class="blog-footer">
-              <div class="like-wrapper"><a href="#">Like
-                  <span class="glyphicon glyphicon-thumbs-up"></span>
-                </a>
-              </div>
-              <div class="comment-wrapper">
-                <a href="#">Comment
-                  <span class="glyphicon glyphicon-comment"></span>
-                </a>
-              </div>
+        <div class="container justify-items-center align-items-center">
+          <div class="blog-header">
+            <%= @post.title %>
+          </div>
+          <div class="blog-content">
+            <%= @post.content %>
+              
+
+              <%= link_to 'Edit', edit_post_path(@post) %> |
+                <%= link_to 'Back', posts_path %>
+                  Change layout to include comments and creater at the bottom
+          </div>
+          <div class="blog-footer">
+            <div class="like-wrapper"><a href="#">Like
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+              </a>
             </div>
-      </div>
+            <div class="comment-wrapper">
+              <a href="#">Comment
+                <span class="glyphicon glyphicon-comment"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container justify-items-center align-items-center">
+          <div class="blog-header">
+            <h2>Comments</h2>
+          </div>
+          <div class="blog-content">
+              <div class="comments">
+                
+                <% @post.comments.each do |comment| %>
+                  
+        
+                  <p id="comment">
+                    <strong><%= comment.comment %></strong>
+                  </p>
+                  <p id="commenter">
+                    By <%= comment.owner %>
+                  </p>
+                  <% end %>
+        
+                    <h2>Add a comment:</h2>
+                    <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+        
+                      <p>
+                        <%= form.label :comment %><br>
+                          <%= form.text_area :comment %>
+                      </p>
+                      <p>
+                        <%= form.submit %>
+                      </p>
+                      <% end %>
+              </div>
+          </div>
+          <div class="blog-footer">
+            Comment as <%= current_user[:email]%>
+          </div>
+        </div>
       </div>
       <%= link_to 'Back', posts_path %>
         </div>

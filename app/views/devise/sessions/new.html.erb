@@ -28,11 +28,12 @@
 
   <div class="actions">
     <%= f.submit "Log in" %>
+    <%= render "devise/shared/links" %>
+<%= link_to 'Back', posts_path %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-<%= link_to 'Back', posts_path %>
+
 </div>
 </div>
 </div>

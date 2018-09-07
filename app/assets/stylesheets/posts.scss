@@ -158,6 +158,9 @@ section .container-fluid {
     -moz-outline-radius: 14.7rem;
     margin: 2rem 2rem;
     border-radius: 27.5rem;
+    position: relative;
+    top: -2rem;
+    transform: rotate(45deg);
 }
 
 .form-wrapper label {
@@ -170,6 +173,46 @@ section .container-fluid {
     align-items: center;
     flex-direction: column;
 }
+
+.form-wrapper form{
+    transform: rotate(-45deg);
+}
+
+#new_user  {
+    transform: rotate(-45deg);
+}
+.form-wrapper > form:nth-child(1) > p:nth-child(6) {
+    justify-content: center;
+    display: flex;
+}
+
+.comments {
+    overflow: scroll;
+    width: 42rem;
+    height: 40rem;
+}
+
+.comments #commenter{
+    text-align: end;
+    font-family: "Times New Roman", Times, serif !important; 
+}
+
+#comment_comment {
+    color: black;
+}
+
+input {
+    color:black;
+}
+
+.comments #comment{
+    text-align: start;
+}
+
+.link {
+    text-align: center;
+}
+
 
 .field i {
     color: whitesmoke;
