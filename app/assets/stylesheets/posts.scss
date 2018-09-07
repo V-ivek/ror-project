@@ -182,7 +182,7 @@ section .container-fluid {
     transform: rotate(-45deg);
 }
 .form-wrapper > form:nth-child(1) > p:nth-child(6) {
-    justify-content: center;
+    justify-content: start;
     display: flex;
 }
 
@@ -202,7 +202,10 @@ section .container-fluid {
 }
 
 input {
-    color:black;
+    background-image: linear-gradient(to bottom, #5faac7 0%, #5faac7 100%);
+    border-color: #28528c;
+    color: #231f20cc;
+
 }
 
 .comments #comment{
@@ -230,6 +233,7 @@ input {
 
 .actions{
     display: flex;
+    color : whitesmoke;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -259,12 +263,14 @@ input {
 }
 
 .blog-content {
-    height: 75%;
-    justify-items: center;
-    width: 100%;
     display: flex;
-    background: #000c;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 100%;
+    background: #000c;
+    overflow: auto;
 }
 
 .blog-content span {

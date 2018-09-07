@@ -14,7 +14,7 @@ class LikeController < ApplicationController
         else
             redirect_to new_user_session_path and return 
         end
-        redirect_to "/posts"
+        redirect_to "/posts" and return
     end
 
 end

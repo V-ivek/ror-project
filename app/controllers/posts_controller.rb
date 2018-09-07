@@ -13,6 +13,9 @@ class PostsController < ApplicationController
     end
     def show 
         @post = Post.find(params[:id])
+        if user_signed_in?
+            u = User.find_by_id(current_user.id)
+        end
     end
     def create
         # render plain: params[:post].inspect
