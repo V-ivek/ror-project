@@ -19,6 +19,7 @@
               <%= link_to 'Edit', edit_post_path(@post) %> 
                 <%= link_to 'Back', posts_path %>
           </div>
+          <% if user_signed_in? %>
           <div class="blog-footer">
                 <div class="like-wrapper">
                 <%if !current_user.likes.find_by_post_id(@post[:id]) %>
@@ -30,7 +31,22 @@
                 <div class="comment-wrapper">
                   <%= link_to "Comments (#{@post.comments_count})", post_path(@post[:id]) %><span class="glyphicon glyphicon-comment"></span>
                 </div>
-              </div>
+          </div>
+          <% else %>
+          <div class="blog-footer">
+                <div class="like-wrapper">
+                <%if false %>
+                  <%= link_to "Likes (#{@post.likes_count})", add_like_path(@post.id) %><span class="glyphicon glyphicon-thumbs-up"></span>
+                <% else %>
+                    <%= link_to_if false , "Liked! (#{@post.likes_count})", add_like_path(@post.id) %>
+                <% end %>
+                </div>
+                <div class="comment-wrapper">
+                  <%= link_to_if false, "Comments (#{@post.comments_count})", post_path(@post[:id]) %><span class="glyphicon glyphicon-comment"></span>
+                </div>
+          </div>
+
+          <% end %>
         </div>
         <div class="container justify-items-center align-items-center">
           <div class="blog-header">
@@ -63,9 +79,13 @@
                       <% end %>
               </div>
           </div>
+          <% if user_signed_in? %>
           <div class="blog-footer">
             Comment as <%= current_user[:email]%>
           </div>
+          <% else %>
+            Comment as Anonymous
+            <% end %>
         </div>
       </div>
       <%= link_to 'Back', posts_path %>

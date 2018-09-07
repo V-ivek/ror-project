@@ -3,8 +3,14 @@ class CommentsController < ApplicationController
         @post = Post.find(params[:post_id])
         @comment = Comment.new
         @comment[:post_id] = @post[:id]
-        @comment[:user_id] = current_user[:id]
-        @comment[:owner] = current_user[:email]
+        if user_signed_in?
+            @comment[:user_id] = current_user[:id]
+            @comment[:owner] = current_user[:email]
+        else
+            @comment[:user_id] = 0
+            @comment[:owner] = "Anonymous"
+            @comment[:comment] = comment_params[:comment]
+        end
         @comment[:comment] = comment_params[:comment]
         @comment.save
         @post.increment!(:comments_count)
